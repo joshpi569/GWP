@@ -13,17 +13,19 @@
 
    function validate(datum){
     let geburtsdatum = document.getElementsByName("geburtsdatum")[0].value; 
-    gebKorrekt = true;
-    einKorrekt = true;
-    fueKorrekt = true;         
+    
+    
+            
     switch(datum){
         case "geburtstag":
+          gebKorrekt = true;
           if(getDiffAkt(geburtsdatum) <= 0) {
             alert("Das Geburtsdatum muss in der Vergangenheit liegen!");
             gebKorrekt = false;
           }
           break;
         case "einschulung":
+          einKorrekt = true;
           let einschulungsdatum = document.getElementsByName("einschulungsdatum")[0].value;
           //let geburtsdatum = document.getElementsByName("geburtsdatum")[0].value;
           let diff = getDiff(geburtsdatum, einschulungsdatum);
@@ -33,6 +35,7 @@
           }
           break;
         case "fuehrerschein": 
+          fueKorrekt = true; 
           let fuehrerscheinSeit = document.getElementsByName("fuehrerscheinSeit")[0].value;
           if(fuehrerscheinSeit){
             if(getDiff(geburtsdatum, fuehrerscheinSeit) < 17){
