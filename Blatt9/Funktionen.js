@@ -26,6 +26,6 @@ function toDate(datum){
   let tag = parseInt(datum.substring(8,10));
   let monat = parseInt(datum.substring(5,7));
   let jahr = parseInt(datum.substring(0,4));
-  let nDatum = new Date(jahr, monat-1, tag);
+  let nDatum = ((tag)&&tag!=0) ? new Date(jahr, monat-1, tag) : "";
   return nDatum;
 }
