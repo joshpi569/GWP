@@ -47,7 +47,9 @@
         let geburtsdatum = document.getElementsByName("geburtsdatum")[0].value; 
         let einschulungsdatum = document.getElementsByName("einschulungsdatum")[0].value;
         let fuehrerscheinSeit = document.getElementsByName("fuehrerscheinSeit")[0].value;
-        let url = "http://localhost/gwp9/DatumseingabenVerarbeiten.php?geburtsdatum="+geburtsdatum+"&einschulungsdatum="+einschulungsdatum+"&fuehrerscheinSeit="+fuehrerscheinSeit+"&gebKorrekt="+gebKorrekt+"&einKorrekt="+einKorrekt+"&fueKorrekt="+fueKorrekt;
+        if(!(geburtsdatum != null && geburtsdatum!="")) gebKorrekt = false;
+        if(!(einschulungsdatum != null && einschulungsdatum!="")) einKorrekt = false;
+        let url = "http://localhost/GWP/Blatt9/DatumseingabenVerarbeiten.php?geburtsdatum="+geburtsdatum+"&einschulungsdatum="+einschulungsdatum+"&fuehrerscheinSeit="+fuehrerscheinSeit+"&gebKorrekt="+gebKorrekt+"&einKorrekt="+einKorrekt+"&fueKorrekt="+fueKorrekt;
         window.location.href = url;
       }
     </script>
